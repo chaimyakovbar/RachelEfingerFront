@@ -30,13 +30,17 @@ const Contact = () => {
 
     return (
 
-        <div style={{width:"600px", marginLeft:"20%"}}>
+        <div style={{width:"400px", marginLeft:"8px"}}>
+          <h3>תכניסי שם:</h3>
         <TextField value={name} onChange={(e) => setName(e.target.value)} style={{ marginTop: "30px" }} id="standard-basic" type="title" fullWidth  label="Name" variant="standard"/>
+        <h3>תכניסי מספר:</h3>
         <TextField value={number} onChange={(e) => setNumber(e.target.value)} style={{ marginTop: "30px" }} id="standard-basic" type="title" fullWidth  label="Number" variant="standard"/>
+        <h3>תכניסי מייל:</h3>
         <TextField value={email} onChange={(e) => setEmail(e.target.value)} style={{ marginTop: "30px" }} id="standard-basic" type="title" fullWidth  label="Email" variant="standard"/>
+        <h3>תכניסי הערה שאת רוצה להוסיך:</h3>
         <TextField value={note} onChange={(e) => setNote(e.target.value)} style={{ marginTop: "30px" }} id="standard-basic" type="title" fullWidth  label="Note" variant="standard"/>
       
-      <SaveButton onClick={getUsrData} type="submit">Approval</SaveButton>
+      <SaveButton  onClick={getUsrData} type="submit">אישור</SaveButton>
         </div>
     )
 }
@@ -49,6 +53,7 @@ export default Contact
 const SaveButton = styled(Button)`
   color: black;
   font-size: 15px;
+  margin-top: 10px;
   background-color: rgb(131, 191, 133);
   transition: transform 0.6s ease-in-out; 
   &:hover {

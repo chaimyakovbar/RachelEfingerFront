@@ -1,8 +1,6 @@
 import * as React from 'react';
 import DrawerNavBAr from './Drawer';
-import logo from '../assets/LOGO.jpg';
 import logo2 from '../assets/LOGO2.jpg';
-// import DrawerNavBAr2 from './Drawer2';
 
 
 const NavBar = () => {
@@ -14,7 +12,6 @@ const NavBar = () => {
         </button>
         <h1>RACHEL EFINGER</h1>
         <DrawerNavBAr />
-        {/* <DrawerNavBAr2/> */}
       </div>
       <div style={{ backgroundColor: "black", height: "1px", marginTop: "10px" }}></div>
     </>

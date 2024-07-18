@@ -1,37 +1,65 @@
-import { useMemo } from 'react'
+import React from 'react';
+import { Card, CardHeader, CardActionArea, CardMedia, CardContent, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
-import { useAtom } from 'jotai'
-import { getTodo } from '../api/todos'
-import { useQuery } from 'react-query'
-import { queryAtom } from './filterCompletedAndDelete'
 
-const defaultTodos = []
+const useStyles = makeStyles((theme) => ({
+  root: {
+    maxWidth: 345,
+  },
+  media: {
+    height: 0,
+    paddingTop: '56.25%', // 16:9
+  },
+}));
 
-export const useTodo = ({ enabled } = {}) => {
-    
-    const [query] = useAtom(queryAtom)
+const ImageList = () => {
+  const classes = useStyles();
 
-    const queryParams = useMemo(() =>
-        Object.entries(query).map(([key, value]) => `${key}=${value}`, [query]).join('&'),
-        [query])
+  return (
+    <div>
+      <Card className={classes.root} raised={true}>
+        <CardHeader title="Camera Name" />
+        <CardActionArea>
+          <CardMedia
+            component='video'
+            className={classes.media}
+            controls
+            src = "../../assetsHOME_PAGE.MP4"
+            title="Video Title"
+          />
+          <CardContent>
+            <Typography variant="body2" color="textSecondary" component="p">
+              Some Text
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </div>
+  );
+}
 
-    const retrievePosts = async () => {
-        try {
-            const response = await getTodo(queryParams)
-            return response.data
-        } catch (err) {
-        }
-    }
-    const { data: todoList, isError: error, isLoading, refetch } = useQuery({
-        queryKey: [`todos_${queryParams}`],
-        queryFn: retrievePosts,
-        enabled,
-    })
+export default ImageList;
 
-    return {
-        isLoading,
-        error,
-        todoList: todoList || defaultTodos,
-        refetch
-    }
-};
+
+
+import React from 'react';
+import CardMedia from '@mui/material/CardMed/ia';
+
+
+const ImageList = () => {
+  return (
+    <div>
+      <CardMedia
+        component='video'
+        src={require('../../assets/')}
+        autoPlay
+        controls 
+      />
+
+
+</div>
+  );
+}
+
+export default ImageList;

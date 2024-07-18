@@ -47,7 +47,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: '20px',
+    // padding: '20px',
   },
   cardContainer: {
     display: 'flex',

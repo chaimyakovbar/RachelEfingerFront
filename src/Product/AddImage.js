@@ -1,26 +1,26 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 
-function AddImage({ image, setImage }) {
-  const [imagePreview, setImagePreview] = useState(null);
+// function AddImage({ image, setImage }) {
+//   const [imagePreview, setImagePreview] = useState(null);
 
-  const handleImageChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      setImage(file);
-      const reader = new FileReader();
-      reader.onload = () => {
-        setImagePreview(reader.result);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
+//   const handleImageChange = (event) => {
+//     const file = event.target.files[0];
+//     if (file) {
+//       setImage(file);
+//       const reader = new FileReader();
+//       reader.onload = () => {
+//         setImagePreview(reader.result);
+//       };
+//       reader.readAsDataURL(file);
+//     }
+//   };
 
-  return (
-    <div>
-      <input type="file" accept="image/*" onChange={handleImageChange} />
-      {imagePreview && <img src={imagePreview} alt="Preview" style={{ width: '100px', height: '100px' }} />}
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       <input type="file" accept="image/*" onChange={handleImageChange} />
+//       {imagePreview && <img src={imagePreview} alt="Preview" style={{ width: '100px', height: '100px' }} />}
+//     </div>
+//   );
+// }
 
-export default AddImage;
+// export default AddImage;
