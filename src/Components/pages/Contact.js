@@ -34,9 +34,9 @@ const Contact = () => {
           <h3>תכניסי שם:</h3>
         <TextField value={name} onChange={(e) => setName(e.target.value)} style={{ marginTop: "30px" }} id="standard-basic" type="title" fullWidth  label="Name" variant="standard"/>
         <h3>תכניסי מספר:</h3>
-        <TextField value={number} onChange={(e) => setNumber(e.target.value)} style={{ marginTop: "30px" }} id="standard-basic" type="title" fullWidth  label="Number" variant="standard"/>
+        <TextField value={number} onChange={(e) => setNumber(e.target.value)} style={{ marginTop: "30px" }} id="standard-basic" type="number" fullWidth  label="Number" variant="standard"/>
         <h3>תכניסי מייל:</h3>
-        <TextField value={email} onChange={(e) => setEmail(e.target.value)} style={{ marginTop: "30px" }} id="standard-basic" type="title" fullWidth  label="Email" variant="standard"/>
+        <TextField value={email} onChange={(e) => setEmail(e.target.value)} style={{ marginTop: "30px" }} id="standard-basic" type="email" fullWidth  label="Email" variant="standard"/>
         <h3>תכניסי הערה שאת רוצה להוסיך:</h3>
         <TextField value={note} onChange={(e) => setNote(e.target.value)} style={{ marginTop: "30px" }} id="standard-basic" type="title" fullWidth  label="Note" variant="standard"/>
       

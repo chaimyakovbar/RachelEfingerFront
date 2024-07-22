@@ -1,6 +1,6 @@
 import React from 'react';
 import { useProductList } from '../../Hooks/UseProducts';
-
+import {DRESSLIST}  from '../../consts /SubjectsList';
 
 const Shop = () => {
   const { productList, isLoading, error } = useProductList();
@@ -15,27 +15,41 @@ const Shop = () => {
 
   return (
     <div>
-      <h2 style={{ marginLeft: "15px" }}>Dress</h2>
-      <div style={styles.container}>
-        <div style={styles.cardContainer}>
-          {productList.map((product, index) => (
-            <div key={index} style={styles.card}>
-              {product.image && (
-                <img
-                  src={`http://localhost:3010${product.image}`}
-                  alt="Product"
-                  style={styles.image}
-                />
-              )}
-              <ul style={styles.list}>
-                <li style={styles.listItem}>{product.name}</li>
-                <li style={styles.listItem}>{product.price}₪</li>
-              </ul>
-            </div>
-          ))}
-        </div>
+    {/* {productList.map((product, index) => (
+          <div key={index} style={styles.card}>
+            
+            {product.image && (
+              <img
+                src={`http://localhost:3010${product.image}`}
+                alt="Product"
+                style={styles.image}
+              />
+            )}
+            <ul style={styles.list}>
+              <li style={styles.listItem}>{product.name}</li>
+              <li style={styles.listItem}>{product.price}₪</li>
+            </ul>
+          </div>
+        ))} */}
+    <h2 style={{ marginLeft: "15px" }}>Dress</h2>
+    <div style={styles.container}>
+      <div style={styles.cardContainer}>
+        {DRESSLIST.map((product) => (
+          <div key={product.name} style={styles.card}>
+            <img 
+              src={product.image}
+              alt={product.name}
+              style={styles.image}
+            />
+            <ul style={styles.list}>
+              <li style={styles.listItem}>{product.name}</li>
+              <li style={styles.listItem}>{product.price}₪</li>
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
+  </div>
   );
 };
 

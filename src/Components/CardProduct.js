@@ -1,9 +1,10 @@
 import React from 'react';
 import { useProductList } from '../Hooks/UseProducts';
+import {DRESSLIST}  from '../consts /SubjectsList';
 
 const CardProduct = () => {
   const { productList, isLoading, error } = useProductList();
-
+  
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -14,11 +15,7 @@ const CardProduct = () => {
 
   return (
     <div>
-      <h2 style={{ marginLeft: "15px" }}>Dress</h2>
-      <div style={styles.container}>
-        <div style={styles.cardContainer}>
-
-          {productList.map((product, index) => (
+      {/* {productList.map((product, index) => (
             <div key={index} style={styles.card}>
               
               {product.image && (
@@ -28,6 +25,22 @@ const CardProduct = () => {
                   style={styles.image}
                 />
               )}
+              <ul style={styles.list}>
+                <li style={styles.listItem}>{product.name}</li>
+                <li style={styles.listItem}>{product.price}₪</li>
+              </ul>
+            </div>
+          ))} */}
+      <h2 style={{ marginLeft: "15px" }}>Dress</h2>
+      <div style={styles.container}>
+        <div style={styles.cardContainer}>
+          {DRESSLIST.map((product) => (
+            <div key={product.name} style={styles.card}>
+              <img 
+                src={product.image}
+                alt={product.name}
+                style={styles.image}
+              />
               <ul style={styles.list}>
                 <li style={styles.listItem}>{product.name}</li>
                 <li style={styles.listItem}>{product.price}₪</li>
@@ -45,7 +58,6 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    // padding: '20px',
   },
   cardContainer: {
     display: 'flex',
@@ -74,4 +86,6 @@ const styles = {
   },
 };
 
-export default CardProduct;
+export default CardProduct
+
+

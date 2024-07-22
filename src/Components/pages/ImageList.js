@@ -88,24 +88,5 @@ const itemData = [
     img:image6 ,
     title: '',
   },
-  {
-    img:image6 ,
-    title: '',
-    rows: 2,
-    cols: 2,
-  },
-  {
-    img:image6 ,
-    title: ' ',
-  },
-  {
-    img:image6 ,
-    title: ' ',
-  },
-  {
-    img:image6 ,
-    title: '',
-    cols: 2,
-  },
 ];
   
