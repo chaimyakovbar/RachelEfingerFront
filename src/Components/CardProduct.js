@@ -1,6 +1,5 @@
 import React from 'react';
 import { useProductList } from '../Hooks/UseProducts';
-// import AddNewProduct from '../Product/AddNewProduct';
 
 const CardProduct = () => {
   const { productList, isLoading, error } = useProductList();
@@ -15,7 +14,6 @@ const CardProduct = () => {
 
   return (
     <div>
-      {/* <AddNewProduct /> */}
       <h2 style={{ marginLeft: "15px" }}>Dress</h2>
       <div style={styles.container}>
         <div style={styles.cardContainer}>
