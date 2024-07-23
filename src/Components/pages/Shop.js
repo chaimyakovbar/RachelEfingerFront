@@ -1,17 +1,17 @@
 import React from 'react';
-import { useProductList } from '../../Hooks/UseProducts';
+// import { useProductList } from '../../Hooks/UseProducts';
 import {DRESSLIST}  from '../../consts /SubjectsList';
 
 const Shop = () => {
-  const { productList, isLoading, error } = useProductList();
+  // const { productList, isLoading, error } = useProductList();
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+  // if (isLoading) {
+  //   return <div>Loading...</div>;
+  // }
 
-  if (error) {
-    return <div>Error fetching products.</div>;
-  }
+  // if (error) {
+  //   return <div>Error fetching products.</div>;
+  // }
 
   return (
     <div>
@@ -58,7 +58,6 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    // padding: '20px',
   },
   cardContainer: {
     display: 'flex',

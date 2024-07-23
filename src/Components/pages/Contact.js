@@ -39,6 +39,8 @@ const Contact = () => {
         <TextField value={email} onChange={(e) => setEmail(e.target.value)} style={{ marginTop: "30px" }} id="standard-basic" type="email" fullWidth  label="Email" variant="standard"/>
         <h3>תכניסי הערה שאת רוצה להוסיך:</h3>
         <TextField value={note} onChange={(e) => setNote(e.target.value)} style={{ marginTop: "30px" }} id="standard-basic" type="title" fullWidth  label="Note" variant="standard"/>
+        <h3>השמלה שאת רוצה :</h3>
+        <TextField value={note} onChange={(e) => setNote(e.target.value)} style={{ marginTop: "30px" }} id="standard-basic" type="title" fullWidth  label="The Dress" variant="standard"/>
       
       <SaveButton  onClick={getUsrData} type="submit">אישור</SaveButton>
         </div>

@@ -1,21 +1,22 @@
 import React from 'react';
-import { useProductList } from '../Hooks/UseProducts';
-import {DRESSLIST}  from '../consts /SubjectsList';
+// import { useProductList } from '../Hooks/UseProducts';
+import { DRESSLIST } from '../consts /SubjectsList';
+import { Link } from 'react-router-dom';
 
 const CardProduct = () => {
-  const { productList, isLoading, error } = useProductList();
-  
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+//   const { productList, isLoading, error } = useProductList();
 
-  if (error) {
-    return <div>Error fetching products.</div>;
-  }
+//   if (isLoading) {
+//     return <div>Loading...</div>;
+//   }
+
+//   if (error) {
+//     return <div>Error fetching products.</div>;
+//   }
 
   return (
     <div>
-      {/* {productList.map((product, index) => (
+           {/* {productList.map((product, index) => (
             <div key={index} style={styles.card}>
               
               {product.image && (
@@ -31,21 +32,23 @@ const CardProduct = () => {
               </ul>
             </div>
           ))} */}
-      <h2 style={{ marginLeft: "15px" }}>Dress</h2>
+      <h2 style={{ marginLeft: "15px" }}>All Colliction</h2>
       <div style={styles.container}>
         <div style={styles.cardContainer}>
-          {DRESSLIST.map((product) => (
-            <div key={product.name} style={styles.card}>
-              <img 
-                src={product.image}
-                alt={product.name}
-                style={styles.image}
-              />
-              <ul style={styles.list}>
-                <li style={styles.listItem}>{product.name}</li>
-                <li style={styles.listItem}>{product.price}₪</li>
-              </ul>
-            </div>
+          {DRESSLIST.slice(0, 3).map((product) => (
+            <Link key={product.name} to="/shop" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <div style={styles.card}>
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  style={styles.image}
+                />
+                <ul style={styles.list}>
+                  <li style={styles.listItem}>{product.name}</li>
+                  <li style={styles.listItem}>{product.price}₪</li>
+                </ul>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -86,6 +89,4 @@ const styles = {
   },
 };
 
-export default CardProduct
-
-
+export default CardProduct;
