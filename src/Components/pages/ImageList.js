@@ -25,9 +25,14 @@ export default function QuiltedImageList() {
 
     
 
-   <video style={{marginTop:"15px"}} width ='100%' height="600px" objectFit = 'cover' controls autoPlay muted loop>
+   {/* <video style={{marginTop:"15px"}} width ='100%' height="600px" objectFit = 'cover' controls autoPlay muted loop>
            <source src={require('../../assets/home.webm')} type='video/webm' />
-    </video>
+    </video> */}
+    <div>
+    <video style={{marginTop:"15px"}} width ='100%' height="600px" objectFit = 'cover' controls autoPlay muted loop>
+        <source src={require(`../../assets/home.mp4`)} type="video/mp4" />
+      </video>
+    </div>
 
     <ImageList
       sx={{ width: "100%", height: 450 }}

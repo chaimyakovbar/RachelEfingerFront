@@ -12,7 +12,7 @@ const NavBar = () => {
             <img src={logo2} alt="Logo" style={{ height: "100px", width: "100px", marginTop: "10px" }} />
           </button>
         </Link>
-        <h1>RACHEL EFINGER</h1>
+        <p>RACHEL EFINGER</p>
         <DrawerNavBAr />
       </div>
       <div style={{ backgroundColor: "black", height: "1px", marginTop: "10px" }}></div>
