@@ -54,7 +54,7 @@ const DrawerNavBar = () => {
 
   return (
     <div>
-      <Button sx={{ color: 'black', fontSize: "20px" }} onClick={toggleDrawer('right', true)}>
+      <Button sx={{ color: 'gray' }} onClick={toggleDrawer('right', true)}>
         <ViewHeadlineIcon />
       </Button>
       <Drawer

@@ -15,7 +15,7 @@ const NavBar = () => {
         <p>RACHEL EFINGER</p>
         <DrawerNavBAr />
       </div>
-      <div style={{ backgroundColor: "black", height: "1px", marginTop: "10px" }}></div>
+      {/* <div style={{ backgroundColor: "black", height: "1px", marginTop: "10px" }}></div> */}
     </>
   );
 }
