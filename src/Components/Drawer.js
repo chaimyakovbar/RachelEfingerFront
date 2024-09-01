@@ -36,10 +36,10 @@ const DrawerNavBar = () => {
       <List>
         {[
           { text: 'HOME', link: '/' },
-          { text: 'SHOP', link: '/shop' },
-          { text: 'NEW ARRIVALS', link: '/new-arrivals' },
+          { text: 'COLLECTION', link: '/shop' },
+          // { text: 'NEW ARRIVALS', link: '/new-arrivals' },
           { text: 'ABOUT', link: '/about' },
-          { text: 'CONTACT', link: '/contact' },
+          { text: 'CONTACT US', link: '/contact' },
         ].map((item) => (
           <ListItem key={item.text} disablePadding>
             <ListItemButton component={Link} to={item.link}>

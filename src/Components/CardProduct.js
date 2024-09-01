@@ -32,10 +32,10 @@ const CardProduct = () => {
               </ul>
             </div>
           ))} */}
-      <h2 style={{ marginLeft: "15px" }}>All Collection</h2>
+      <p style={{ marginLeft: "15px" }}>Collection</p>
       <div style={styles.container}>
         <div style={styles.cardContainer}>
-          {DRESSLIST.slice(0, 3).map((product) => (
+          {DRESSLIST.slice(0, 2).map((product) => (
             <Link key={product.name} to="/shop" style={{ textDecoration: 'none', color: 'inherit' }}>
               <div style={styles.card}>
                 <img
@@ -43,11 +43,6 @@ const CardProduct = () => {
                   alt={product.name}
                   style={styles.image}
                 />
-              <h2>FOR ALL COLLECTION</h2>
-                {/* <ul style={styles.list}>
-                  <li style={styles.listItem}>{product.name}</li>
-                  <li style={styles.listItem}>{product.price}₪</li>
-                </ul> */}
               </div>
             </Link>
           ))}

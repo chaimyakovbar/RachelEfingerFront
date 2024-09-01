@@ -31,7 +31,7 @@ const Shop = () => {
             </ul>
           </div>
         ))} */}
-    <h2 style={{ marginLeft: "15px" }}>Dress</h2>
+    <p style={{ marginLeft: "15px" }}>Dresses for Rent</p>
     <div style={styles.container}>
       <div style={styles.cardContainer}>
         {DRESSLIST.map((product) => (
@@ -43,7 +43,6 @@ const Shop = () => {
             />
             <ul style={styles.list}>
               <li style={styles.listItem}>{product.name}</li>
-              <li style={styles.listItem}>{product.price}₪</li>
             </ul>
           </div>
         ))}

@@ -10,14 +10,12 @@ import { Link } from 'react-router-dom';
 const SocialNetworks = () => {
   return (
     <div style={styles.container}>
-      <Link style={{marginBottom:"10px" , textDecoration: 'none', color: '#fff', fontSize: '16px', padding: '10px 20px', backgroundColor: 'black', borderRadius: '5px',}} to={'/PolicySupport'}> 
-      PolicySupport 
-      </Link>
+
       <div style={styles.iconContainer}>
 
         <div style={styles.iconItem}>
           <LocationOnIcon />
-          <a href='https://www.waze.com/ul?utm_source=waze_app&utm_campaign=share_waze' style={styles.link}>
+          <a href='https://waze.com/ul/hsv8y882hk' style={styles.link}>
             Bne Brak
           </a>
         </div>
@@ -50,11 +48,16 @@ const SocialNetworks = () => {
 
 
       </div>
+      <Link style={{ marginTop: "20px", textDecoration: 'none', fontSize: '16px', padding: '10px 20px', backgroundColor: 'white',color:"black", borderRadius: '5px', }} to={'/PolicySupport'}>
+        PolicySupport
+      </Link>
       <Link to="/" style={styles.link}>
-        <button className='logo' style={{  border: 'none',background: 'none',textAlign: 'center',fontSize: '16px',color: '#333',}}>
-          <p style={{ fontSize: '16px',
-                       margin: 0,
-                       marginTop: 35}}>
+        <button className='logo' style={{ border: 'none', background: 'none', textAlign: 'center', fontSize: '16px', color: '#333', }}>
+          <p style={{
+            fontSize: '16px',
+            margin: 0,
+            marginTop: 35
+          }}>
             All Rights reserved © 2024 Showroom By Rachel Efinger
           </p>
         </button>
@@ -67,17 +70,17 @@ const styles = {
   container: {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // alignItems: 'center',
+    // justifyContent: 'center',
     minHeight: '50vh',
     // backgroundColor: '#f4f4f4',
   },
-  iconContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: '10px',
-  },
+  // iconContainer: {
+  //   display: 'flex',
+  //   flexDirection: 'column',
+  //   alignItems: 'center',
+  //   gap: '10px',
+  // },
   iconItem: {
     display: 'flex',
     alignItems: 'center',
