@@ -6,7 +6,7 @@ import logo2 from '../assets/logo3.jpg'
 const NavBar = () => {
   return (
     <>
-      <div style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", textAlign: "center" }}>
+      <div style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", textAlign: "center",position: 'sticky', top: 0, zIndex: 1000, backgroundColor: '#fff', padding: '10px 0', boxShadow: '0px 2px 4pxrgba(0, 0, 0, 0.1)'}}>
         <Link to="/" style={{ textDecoration: 'none', color: 'inherit' , marginTop:"20px"}}>
           <button className='logo' style={{ border: "none", background: "none" }}>
             <img src={logo2} alt="Logo" style={{ height: "40px", width: "100px"}} />
@@ -15,7 +15,6 @@ const NavBar = () => {
         <p style={{paddingRight:"40px"}}>RACHEL EFINGER</p>
         <DrawerNavBAr />
       </div>
-      {/* <div style={{ backgroundColor: "black", height: "1px", marginTop: "10px" }}></div> */}
     </>
   );
 }

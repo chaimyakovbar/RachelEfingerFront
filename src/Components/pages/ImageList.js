@@ -20,15 +20,19 @@ function srcset(image, size, rows = 1, cols = 1) {
 export default function QuiltedImageList() {
   return (
     <>
-        
+
 
 
       {/* <video style={{marginTop:"15px"}} width ='100%' height="600px" objectFit = 'cover' controls autoPlay muted loop>
            <source src={require('../../assets/home.webm')} type='video/webm' />
     </video> */}
       <div>
-        <video style={{ marginTop: "0px" }} width='100%' height="600px" controls autoPlay muted loop playsInline>
+        {/* <video style={{ marginTop: "0px" }} width='100%' height="600px" controls autoPlay muted loop playsInline>
           <source src={require(`../../assets/home.mp4`)} type="video/mp4" />
+        </video> */}
+        <video autoPlay muted loop playsInline
+          style={{ pointerEvents: 'none', width: '100%', height: '800px', objectFit: 'cover', }} >
+          <source src={require(`../../assets/home2.mp4`)} type="video/mp4" />
         </video>
 
       </div>
