@@ -1,69 +1,136 @@
-import React, { useState } from 'react'
-import { postUsers } from '../../api/user'
-import styled from '@emotion/styled'
-import Button from '@mui/material/Button'
-import TextField from '@mui/material/TextField'
-
+import React, { useState } from 'react';
+import { postUsers } from '../../api/user';
+import styled from '@emotion/styled';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 const Contact = () => {
-    const [name, setName] = useState("")
-    const [number, setNumber] = useState(null)
-    const [email, setEmail] = useState("")
-    const [note, setNote] = useState("")
+  const [name, setName] = useState("");
+  const [number, setNumber] = useState(null);
+  const [dress, setDress] = useState("");
+  const [note, setNote] = useState("");
 
-    const getUsrData = async () => {
-      const data = {
-        name,
-        number,
-        email,
-        note,
-      };
-     await postUsers(data)
-     deleteData()
-    }
-    const deleteData = () => {
-        setName("");
-        setNumber("");
-        setEmail("");
-        setNote("");
-    }
+  const getUsrData = async () => {
+    const data = {
+      name,
+      number,
+      dress,
+      note,
+    };
+    await postUsers(data);
+    deleteData();
+  };
 
-    return (
+  const deleteData = () => {
+    setName("");
+    setNumber("");
+    setDress("");
+    setNote("");
+  };
 
-        <div style={{width:"400px", marginLeft:"100%px"}}>
-          <h3>תכניסי שם:</h3>
-        <TextField value={name} onChange={(e) => setName(e.target.value)} style={{ marginTop: "30px" }} id="standard-basic" type="title" fullWidth  label="Name" variant="standard"/>
-        <h3>תכניסי מספר:</h3>
-        <TextField value={number} onChange={(e) => setNumber(e.target.value)} style={{ marginTop: "30px" }} id="standard-basic" type="number" fullWidth  label="Number" variant="standard"/>
-        {/* <h3>תכניסי מייל:</h3>
-        <TextField value={email} onChange={(e) => setEmail(e.target.value)} style={{ marginTop: "30px" }} id="standard-basic" type="email" fullWidth  label="Email" variant="standard"/> */}
-        <h3>השמלה שאת רוצה :</h3>
-        <TextField value={note} onChange={(e) => setNote(e.target.value)} style={{ marginTop: "30px" }} id="standard-basic" type="title" fullWidth  label="The Dress" variant="standard"/>
-        <h3>תכניסי הערה שאת רוצה להוסיך:</h3>
-        <TextField value={note} onChange={(e) => setNote(e.target.value)} style={{ marginTop: "30px" }} id="standard-basic" type="title" fullWidth  label="Note" variant="standard"/>
-      <SaveButton  onClick={getUsrData} type="submit">אישור</SaveButton>
-        </div>
-    )
-}
+  return (
+    <ContactContainer>
+      <FormWrapper>
+        <Title>Contact Form</Title>
+        
+        <Label>תכניסי שם:</Label>
+        <StyledTextField
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          fullWidth
+          label="שם מלא"
+          variant="outlined"
+        />
 
-export default Contact
+        <Label>תכניסי מספר:</Label>
+        <StyledTextField
+          value={number}
+          onChange={(e) => setNumber(e.target.value)}
+          fullWidth
+          label="מספר טלפון"
+          variant="outlined"
+          type="number"
+        />
 
+        <Label>השמלה שאת מעונינת :</Label>
+        <StyledTextField
+          value={dress}
+          onChange={(e) => setDress(e.target.value)}
+          fullWidth
+          label="השמלה שאת מעונינת"
+          variant="outlined"
+        />
 
+        <Label>הערה:</Label>
+        <StyledTextField
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+          fullWidth
+          label="הערה"
+          variant="outlined"
+        />
 
+        <SaveButton onClick={getUsrData} type="submit">
+          אישור
+        </SaveButton>
+      </FormWrapper>
+    </ContactContainer>
+  );
+};
+
+export default Contact;
+
+// Styled Components
+const ContactContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+`;
+
+const FormWrapper = styled.div`
+  width: 400px;
+  padding: 30px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+`;
+
+const Title = styled.h3`
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+`;
+
+const Label = styled.p`
+  font-size: 16px;
+  margin: 15px 0 5px;
+  color: #666;
+`;
+
+const StyledTextField = styled(TextField)`
+  margin-bottom: 20px;
+  & .MuiOutlinedInput-root {
+    border-radius: 8px;
+  }
+`;
 
 const SaveButton = styled(Button)`
-  color: black;
-  font-size: 15px;
+  display: block;
+  width: 100%;
+  color: white;
+  font-size: 18px;
   margin-top: 10px;
-  background-color: rgb(131, 191, 133);
-  transition: transform 0.6s ease-in-out; 
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.4s ease-in-out;
   &:hover {
-    background-color: green;
-    transform: scale(1.15);
+    background: linear-gradient(45deg, #0072ff, #00c6ff);
+    transform: scale(1.05);
   }
-`
-
-
-
-    
-
+`;

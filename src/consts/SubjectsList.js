@@ -19,142 +19,134 @@ import image18 from '../assets/all colliction/image18.jpg'
 import image19 from '../assets/all colliction/image19.jpg'
 import image20 from '../assets/all colliction/image20.jpg'
 import image21 from '../assets/all colliction/image21.jpg'
-import image22 from '../assets/all colliction/image22.jpg'
-
 
 export const SUBJECTLIST = ["חצאית", "שמלה"];
 
 export const DRESSLIST = [
   {
-    name: "Dress 1",
+    name: "Blue bird midi dress",
     price: "100",
     subjects: "Fashion",
     image: image3,
   },
   {
-    name: "Dress 2",
+    name: "Rhythmic Asymmetric  Dress",
     price: "200",
     subjects: "Fashion",
     image: image2,
   },
   {
-    name: "Dress 2",
+    name: "Floral applique midi dress",
     price: "200",
     subjects: "Fashion",
     image: image1,
   },
   {
-    name: "Dress 2",
+    name: "Orange leaves long dress",
     price: "200",
     subjects: "Fashion",
     image: image4,
   },
   {
-    name: "Dress 2",
+    name: "linen floral short dress",
     price: "200",
     subjects: "Fashion",
     image: image5,
   },
   {
-    name: "Dress 2",
+    name: "pink wallpaper long dress",
     price: "200",
     subjects: "Fashion",
     image: image6,
   },
   {
-    name: "Dress 2",
+    name: "pink satin long dress",
     price: "200",
     subjects: "Fashion",
     image: image7,
   },
   {
-    name: "Dress 2",
+    name: "Pink tulle long dress ",
     price: "200",
     subjects: "Fashion",
     image: image8,
   },
   {
-    name: "Dress 2",
+    name: "Yellow rye long dress",
     price: "200",
     subjects: "Fashion",
     image: image9,
   },
   {
-    name: "Dress 2",
+    name: "Asymmetric fleece dress",
     price: "200",
     subjects: "Fashion",
     image: image10,
   },
   {
-    name: "Dress 2",
+    name: "Pearl top & Satin skirt",
     price: "200",
     subjects: "Fashion",
     image: image11,
   },
   {
-    name: "Dress 2",
+    name: "waverly lace long dress",
     price: "200",
     subjects: "Fashion",
     image: image12,
   },
   {
-    name: "Dress 2",
+    name: "ruffled plisse short dress",
     price: "200",
     subjects: "Fashion",
     image: image13,
   },
   {
-    name: "Dress 2",
+    name: "black crepe lattice dress",
     price: "200",
     subjects: "Fashion",
     image: image14,
   },
   {
-    name: "Dress 2",
+    name: "Black flowers long dress",
     price: "200",
     subjects: "Fashion",
     image: image15,
   },
   {
-    name: "Dress 2",
+    name: "black lace long dress ",
     price: "200",
     subjects: "Fashion",
     image: image16,
   },
   {
-    name: "Dress 2",
+    name: "Cream lace fleece dress",
     price: "200",
     subjects: "Fashion",
     image: image17,
   },
   {
-    name: "Dress 2",
+    name: "chiffon with buttons dress",
     price: "200",
     subjects: "Fashion",
     image: image18,
   },
   {
-    name: "Dress 2",
+    name: "Romantic cream dress",
     price: "200",
     subjects: "Fashion",
     image: image19,
   },
   {
-    name: "Dress 2",
+    name: "white lace long dress",
     price: "200",
     subjects: "Fashion",
     image: image20,
   },
   {
-    name: "Dress 2",
+    name: "Black& white tiered dress",
     price: "200",
     subjects: "Fashion",
     image: image21,
-  },
-  {
-    name: "Dress 2",
-    price: "200",
-    subjects: "Fashion",
-    image: image22,
   },
 ];

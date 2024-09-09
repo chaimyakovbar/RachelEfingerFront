@@ -1,75 +1,56 @@
 import React from 'react';
-// import { useProductList } from '../Hooks/UseProducts';
-import { DRESSLIST } from '../consts/SubjectsList';
 import { Link } from 'react-router-dom';
 import SouthIcon from '@mui/icons-material/South';
+import image15 from '../assets/all colliction/image15.jpg';
+import image6 from '../assets/all colliction/image6.jpg';
 
 const CardProduct = () => {
-  //   const { productList, isLoading, error } = useProductList();
-
-  //   if (isLoading) {
-  //     return <div>Loading...</div>;
-  //   }
-
-  //   if (error) {
-  //     return <div>Error fetching products.</div>;
-  //   }
-
   return (
-    <div style={{ marginBottom: "50px" }}>
-      {/* {productList.map((product, index) => (
-            <div key={index} style={styles.card}>
-              
-              {product.image && (
+    <div style={{ marginBottom: '50px' }}>
+      <p style={{ marginLeft: '15px' }}>
+        For All Collection Click <SouthIcon />
+      </p>
+      <div style={styles.container}>
+        <div style={styles.cardContainer}>
+          <Link to="/shop">
+            <button
+              style={styles.card}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#0056b3'; // Darker blue on hover
+                e.currentTarget.style.transform = 'scale(1.05)'; // Slight zoom effect
+                e.currentTarget.querySelector('img').style.filter = 'grayscale(100%)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#007bff'; // Regular button color
+                e.currentTarget.style.transform = 'scale(1)'; // Reset zoom
+                e.currentTarget.querySelector('img').style.filter = 'none';
+              }}
+            >
+              <div style={styles.imageContainer}>
                 <img
-                  src={`http://localhost:3010${product.image}`}
+                  src={image15}
                   alt="Product"
                   style={styles.image}
                 />
-              )}
-              <ul style={styles.list}>
-                <li style={styles.listItem}>{product.name}</li>
-                <li style={styles.listItem}>{product.price}₪</li>
-              </ul>
-            </div>
-          ))} */}
-      <p style={{ marginLeft: "15px" }}>For All Collection Click <SouthIcon /> </p>
-      <div style={styles.container}>
-        <div style={styles.cardContainer}>
-          {DRESSLIST.slice(0, 2).map((product) => (
-            <Link key={product.name} to="/shop" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <div
-                style={styles.card}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'blue';
-                  e.currentTarget.querySelector('img').style.filter = 'grayscale(100%)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'white';
-                  e.currentTarget.querySelector('img').style.filter = 'none';
-                }}
-              >
                 <img
-                  src={product.image}
-                  alt={product.name}
+                  src={image6}
+                  alt="Product"
                   style={styles.image}
                 />
               </div>
-            </Link>
-          ))}
+            </button>
+          </Link>
         </div>
       </div>
     </div>
   );
 };
 
-
 const styles = {
   container: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-
   },
   cardContainer: {
     display: 'flex',
@@ -78,20 +59,28 @@ const styles = {
     gap: '20px',
   },
   card: {
-    width: '180px',
-    borderRadius: '8px',
-    backgroundColor: '#fff',
+    width: '380px',
+    borderRadius: '10px',
+    // backgroundColor: '#007bff', // Brighter button color
+    color: '#fff', // White text color for better contrast
     overflow: 'hidden',
     transition: 'background-color 0.3s ease, transform 0.3s ease',
-    cursor: 'pointer',
+    cursor: 'pointer', // Hand cursor to indicate interactivity
     position: 'relative',
+    // border: '2px solid #0056b3', // Bold border to emphasize button
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', // Adds subtle shadow for depth
+    padding: '10px', // Adds some padding to give the button a clickable feel
+  },
+  imageContainer: {
+    display: 'flex',
+    justifyContent: 'space-around',
   },
   image: {
-    width: '100%',
+    width: '50%',
     height: 'auto',
     transition: 'filter 0.3s ease, transform 0.3s ease',
+    // border: '1px solid black',
   },
 };
-
 
 export default CardProduct;

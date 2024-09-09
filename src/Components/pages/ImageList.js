@@ -67,15 +67,20 @@ const itemData = [
   {
     img: image2,
     title: '',
+    rows: 1,
+    cols: 0,
   },
   {
     img: image3,
     title: '',
+    rows: 2,
+    cols: 0,
   },
   {
     img: image4,
     title: '',
-    cols: 2,
+    rows: 1,
+    cols: 0,
   },
   {
     img: image5,
@@ -95,6 +100,30 @@ const itemData = [
   {
     img: image6,
     title: '',
+  },
+  {
+    img: image6,
+    title: '',
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: image6,
+    title: '',
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: image6,
+    title: '',
+    rows: 1,
+    cols: 2,
+  },
+  {
+    img: image6,
+    title: '',
+    rows: 1,
+    cols: 3,
   },
 ];
 

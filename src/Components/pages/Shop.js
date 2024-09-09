@@ -92,11 +92,13 @@ const styles = {
     borderRadius: '8px',
     backgroundColor: '#fff',
     overflow: 'hidden',
-    cursor: 'pointer', // Added cursor pointer for better UX
+    cursor: 'pointer',
+    textAlign: 'center',
   },
   image: {
     width: '100%',
-    height: 'auto',
+    height: '330px', // Fixed height
+    objectFit: 'cover', // Maintain aspect ratio and cover the container
   },
   list: {
     listStyle: 'none',
@@ -106,7 +108,6 @@ const styles = {
   listItem: {
     fontSize: '1rem',
     marginBottom: '10px',
-    textAlign: 'center',
   },
 };
 

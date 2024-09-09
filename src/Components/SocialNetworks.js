@@ -4,7 +4,6 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import MailIcon from '@mui/icons-material/Mail';
 import InstagramIcon from '@mui/icons-material/Instagram';
-// import PolicySupport from './pages/PolicySupport';
 import { Link } from 'react-router-dom';
 
 const SocialNetworks = () => {
@@ -38,7 +37,6 @@ const SocialNetworks = () => {
           </a>
         </div>
 
-
         <div style={styles.iconItem}>
           <MailIcon />
           <a href='mailto:example@example.com' style={styles.link}>
@@ -46,18 +44,13 @@ const SocialNetworks = () => {
           </a>
         </div>
 
-
       </div>
-      <Link style={{ marginTop: "20px", textDecoration: 'none', fontSize: '16px', padding: '10px 20px', backgroundColor: 'white',color:"black", borderRadius: '5px', }} to={'/PolicySupport'}>
+      <Link style={styles.policyLink} to={'/PolicySupport'}>
         PolicySupport
       </Link>
       <Link to="/" style={styles.link}>
-        <button className='logo' style={{ border: 'none', background: 'none', textAlign: 'center', fontSize: '16px', color: '#333', }}>
-          <p style={{
-            fontSize: '16px',
-            margin: 0,
-            marginTop: 35
-          }}>
+        <button className='logo' style={styles.button}>
+          <p style={styles.footerText}>
             All Rights reserved © 2024 Showroom By Rachel Efinger
           </p>
         </button>
@@ -70,38 +63,54 @@ const styles = {
   container: {
     display: 'flex',
     flexDirection: 'column',
-    // alignItems: 'center',
-    // justifyContent: 'center',
-    minHeight: '50vh',
-    // backgroundColor: '#f4f4f4',
+    justifyContent: 'flex-end',
+    padding: '15px',
+    backgroundColor: '#f9f9f9',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    borderRadius: '10px',
+    zIndex: 1000,
   },
-  // iconContainer: {
-  //   display: 'flex',
-  //   flexDirection: 'column',
-  //   alignItems: 'center',
-  //   gap: '10px',
-  // },
+  iconContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '15px',
+  },
   iconItem: {
     display: 'flex',
     alignItems: 'center',
-    gap: '8px',
-    fontSize: '16px',
+    gap: '10px',
+    fontSize: '14px',
   },
   link: {
     textDecoration: 'none',
-    color: 'inherit',
+    color: '#333', 
+    fontWeight: '500',
   },
   text: {
-    fontSize: '16px',
-    margin: 0,
-    marginTop: 0
+    fontSize: '14px',
   },
   button: {
     border: 'none',
     background: 'none',
     textAlign: 'center',
-    fontSize: '16px',
+    fontSize: '14px',
     color: '#333',
+  },
+  footerText: {
+    fontSize: '12px',
+    margin: 0,
+    marginTop: '20px',
+    color: '#555',
+  },
+  policyLink: {
+    marginTop: '20px',
+    textDecoration: 'none',
+    fontSize: '14px',
+    padding: '10px 20px',
+    backgroundColor: 'black',
+    color: 'white',
+    borderRadius: '5px',
+    textAlign: 'center',
   },
 };
 
