@@ -15,7 +15,7 @@ const SocialNetworks = () => {
         <div style={styles.iconItem}>
           <LocationOnIcon />
           <a href='https://waze.com/ul/hsv8y882hk' style={styles.link}>
-            Bne Brak
+            Bnei Brak
           </a>
         </div>
         <div style={styles.iconItem}>
@@ -27,7 +27,9 @@ const SocialNetworks = () => {
 
         <div style={styles.iconItem}>
           <LocalPhoneIcon />
-          <span style={styles.text}>058-431-2001</span>
+          <a href="tel:058-431-2001" style={styles.link}>
+            058-431-2001
+          </a>
         </div>
 
         <div style={styles.iconItem}>
@@ -39,14 +41,14 @@ const SocialNetworks = () => {
 
         <div style={styles.iconItem}>
           <MailIcon />
-          <a href='mailto:example@example.com' style={styles.link}>
-            example@example.com
+          <a href='efingerrachel@gmail.com' style={styles.link}>
+          efingerrachel@gmail.com
           </a>
         </div>
 
       </div>
       <Link style={styles.policyLink} to={'/PolicySupport'}>
-        PolicySupport
+        Policy Support
       </Link>
       <Link to="/" style={styles.link}>
         <button className='logo' style={styles.button}>
@@ -75,19 +77,10 @@ const styles = {
     flexDirection: 'column',
     gap: '15px',
   },
-  iconItem: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '10px',
-    fontSize: '14px',
-  },
   link: {
     textDecoration: 'none',
-    color: '#333', 
+    color: '#333',
     fontWeight: '500',
-  },
-  text: {
-    fontSize: '14px',
   },
   button: {
     border: 'none',
@@ -112,6 +105,16 @@ const styles = {
     borderRadius: '5px',
     textAlign: 'center',
   },
+  iconItem: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  text: {
+    marginLeft: '10px',
+    textDecoration: 'none',
+    color: 'inherit',
+  },
+
 };
 
 export default SocialNetworks;

@@ -24,7 +24,7 @@ export const SUBJECTLIST = ["חצאית", "שמלה"];
 
 export const DRESSLIST = [
   {
-    name: "Blue bird midi dress",
+    name: "Floral applique midi dress",
     price: "100",
     subjects: "Fashion",
     image: image3,
@@ -36,7 +36,7 @@ export const DRESSLIST = [
     image: image2,
   },
   {
-    name: "Floral applique midi dress",
+    name: "Blue bird midi dress",
     price: "200",
     subjects: "Fashion",
     image: image1,

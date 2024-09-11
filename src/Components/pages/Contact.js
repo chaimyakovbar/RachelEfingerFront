@@ -33,7 +33,6 @@ const Contact = () => {
       <FormWrapper>
         <Title>Contact Form</Title>
         
-        <Label>תכניסי שם:</Label>
         <StyledTextField
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -42,7 +41,6 @@ const Contact = () => {
           variant="outlined"
         />
 
-        <Label>תכניסי מספר:</Label>
         <StyledTextField
           value={number}
           onChange={(e) => setNumber(e.target.value)}
@@ -52,7 +50,6 @@ const Contact = () => {
           type="number"
         />
 
-        <Label>השמלה שאת מעונינת :</Label>
         <StyledTextField
           value={dress}
           onChange={(e) => setDress(e.target.value)}
@@ -61,7 +58,6 @@ const Contact = () => {
           variant="outlined"
         />
 
-        <Label>הערה:</Label>
         <StyledTextField
           value={note}
           onChange={(e) => setNote(e.target.value)}
@@ -85,7 +81,6 @@ const ContactContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
 `;
 
@@ -93,8 +88,6 @@ const FormWrapper = styled.div`
   width: 400px;
   padding: 30px;
   background: white;
-  border-radius: 10px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
 `;
 
 const Title = styled.h3`
