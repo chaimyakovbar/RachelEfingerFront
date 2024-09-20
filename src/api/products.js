@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 // const baseurl = 'http://localhost:3010/products'
-const baseurl = 'https://racheldatabase.onrender.com'
+// const baseurl = 'https://racheldatabase.onrender.com/products'
+const baseurl = 'https://racheldatabase2.onrender.com/products';
 
 
  export const patchDeleteProductById = async (taskId, body) => await axios.patch(`${baseurl}/${taskId}`, body)
