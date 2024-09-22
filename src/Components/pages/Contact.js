@@ -6,19 +6,38 @@ import TextField from '@mui/material/TextField';
 
 const Contact = () => {
   const [name, setName] = useState("");
-  const [number, setNumber] = useState(null);
+  const [number, setNumber] = useState("");
   const [dress, setDress] = useState("");
   const [note, setNote] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
 
   const getUsrData = async () => {
+    if (!name || !number) {
+      alert("Please fill in both name and phone number.");
+      return;
+    }
+
     const data = {
       name,
       number,
       dress,
       note,
     };
-    await postUsers(data);
-    deleteData();
+
+    setIsLoading(true);
+    setSuccessMessage("");
+
+    try {
+      await postUsers(data);
+      setSuccessMessage("המידע נשלח בהצלחה!");
+      deleteData();
+    } catch (error) {
+      console.error("Failed to post user data:", error);
+      setSuccessMessage("אירעה שגיאה בשליחת המידע. נסה שוב.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const deleteData = () => {
@@ -32,7 +51,7 @@ const Contact = () => {
     <ContactContainer>
       <FormWrapper>
         <Title>Contact Form</Title>
-        
+
         <StyledTextField
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -47,7 +66,7 @@ const Contact = () => {
           fullWidth
           label="מספר טלפון"
           variant="outlined"
-          type="number"
+          type="text"
         />
 
         <StyledTextField
@@ -66,9 +85,19 @@ const Contact = () => {
           variant="outlined"
         />
 
-        <SaveButton onClick={getUsrData} type="submit">
-          אישור
-        </SaveButton>
+        {isLoading ? (
+          <SpinnerContainer>
+            <Spinner />  {/* סמל טעינה מסתובב */}
+          </SpinnerContainer>
+        ) : (
+          <SaveButton onClick={getUsrData} type="button">
+            אישור
+          </SaveButton>
+        )}
+
+        {successMessage && (
+          <SuccessMessage>{successMessage}</SuccessMessage>
+        )}
       </FormWrapper>
     </ContactContainer>
   );
@@ -99,12 +128,6 @@ const Title = styled.h3`
   color: #333;
 `;
 
-const Label = styled.p`
-  font-size: 16px;
-  margin: 15px 0 5px;
-  color: #666;
-`;
-
 const StyledTextField = styled(TextField)`
   margin-bottom: 20px;
   & .MuiOutlinedInput-root {
@@ -127,3 +150,33 @@ const SaveButton = styled(Button)`
     transform: scale(1.05);
   }
 `;
+
+const SpinnerContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+`;
+
+const Spinner = styled.div`
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #0072ff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+`;
+
+const SuccessMessage = styled.p`
+  text-align: center;
+  margin-top: 10px;
+  font-size: 18px;
+  color: green;
+`;
+
